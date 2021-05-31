@@ -7,10 +7,9 @@
 
 - Generated ```tfrecord``` using TensorFlow Object Detection API.<br>
 First step was to install [TensorFlow Models repository](https://github.com/tensorflow/models) in conda environment. Then created a folder ```annotations``` which contains ```train``` and ```test``` folder, such that images and .xml files for training & testing are stored in ```train``` and ```test``` folder respectively. <br>
-Now I needed a ```labelmap``` which namely maps each used labels to an integer values. Here, only 1 label is used.<br>
-Now I wrote a script ```generate_tfrecord.py``` using the instructions provided by [TensorFlow](https://www.tensorflow.org/tutorials/load_data/tfrecord) to generate tfrecord for each image in the csv file.<br>
+Then a ```labelmap``` was required, that namely maps each used labels to an integer values. Here, only 1 label is used.<br>
+Then I wrote a script ```generate_tfrecord.py``` using the instructions provided by [TensorFlow](https://www.tensorflow.org/tutorials/load_data/tfrecord) to generate tfrecord for each image in the csv file.<br>
 Final step is to run the following command in the same conda environment:<br>
 ```python generate_tfrecord.py -x /train -l /label_map.pbtxt -o /train.record```<br>
 ```python generate_tfrecord.py -x /test -l /label_map.pbtxt -o [/test.record```<br>
-These will generate two files ```train.record``` and ```test.record```. <br>
-These will be used to train the detection model.
+These will generate two files ```train.record``` and ```test.record```. These will be used to train the detection model.
