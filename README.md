@@ -11,5 +11,5 @@ Then a ```labelmap``` was required, that namely maps each used labels to an inte
 Then I wrote a script ```generate_tfrecord.py``` using the instructions provided by [TensorFlow](https://www.tensorflow.org/tutorials/load_data/tfrecord) to generate tfrecord for each image in the csv file.<br>
 Final step is to run the following command in the same conda environment:<br>
 ```python generate_tfrecord.py -x /train -l /label_map.pbtxt -o /train.record```<br>
-```python generate_tfrecord.py -x /test -l /label_map.pbtxt -o [/test.record```<br>
+```python generate_tfrecord.py -x /test -l /label_map.pbtxt -o /test.record```<br>
 These will generate two files ```train.record``` and ```test.record```. These will be used to train the detection model.
